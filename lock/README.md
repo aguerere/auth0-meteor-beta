@@ -105,3 +105,16 @@ We ensure browser compatibility in `Chrome`, `Safari`, `Firefox` and `IE >= 9`. 
 ## Issue Reporting
 
 If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
+
+## Publishing the package
+
+An [Atmosphere](https://atmospherejs.com) account for Auth0 should be created under the name `auth0` to make it possible to call the package `auth0:lock` as indicated in `package.js`.
+The repo has to be cloned locally, and inside the `lock` folder (package folder) the following command must be run:
+
+```bash
+meteor publish --create
+```
+If the `auth0` account credentials for Atmosphere were used during the Meteor installation, those credentials will be used to push the package to Atmosphere.
+If they were not, then they will be asked for after the previous command is run for the first time and cached thereafter.
+
+This will publish the package, make it available in Atmosphere as well as creating a package site there.
